@@ -256,7 +256,7 @@ pm.globals.set("bookingid", jsonData.bookingid)
 
  ```
 
-This snippet was created to check the status of 200 if the answer received contains the following: Bookingid, firstname, Cristian, lastname, Cristian, totalprice, 150, depositpaid, fake, bookingdates, checkkin, checkout, addtionalneeds. 
+This snippet was created to check the status of 200 if the answer received contains the following: Bookingid, firstname, Cristian, lastname, Cristian, totalprice, 150, depositpaid, fake, bookingdates, checkin, checkout, addtionalneeds. 
 
 <img width="600" alt="Screenshot 2022-08-24 at 17 43 26" src="https://user-images.githubusercontent.com/34375010/186448381-5e604404-98a8-409f-a7f8-0c0036706ab7.png"> 
    
