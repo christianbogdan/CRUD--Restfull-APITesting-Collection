@@ -45,9 +45,26 @@ var jsonData = JSON.parse(responseBody);
 postman.setEnvironmentVariable("token", jsonData.token);
 pm.globals.set("token", jsonData.token )
 ``` 
-This snippet was created to check status 200 if the answer received contains the word token.
+This snippet was created to check status 200 if the answer received contains the word "token".
 
 <img width="600" alt="Screenshot 2022-08-24 at 17 12 53" src="https://user-images.githubusercontent.com/34375010/186441244-db9fa236-b06b-44ba-a378-24266d877cf3.png">
 
+3. Auth without Username&Password 
 
+:triangular_flag_on_post: Snippets 
+
+``` 
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Response body contain Bad credentials", function () {
+    pm.expect(pm.response.text()).to.include("Bad credentials");
+});
+
+```
+This snippet was created to check status 200 if the answer received contains "Bad credentials".
+
+<img width="600" alt="Screenshot 2022-08-24 at 17 17 00" src="https://user-images.githubusercontent.com/34375010/186442152-df6cf4b8-a93d-4741-b121-a8d86cd72054.png">
+
+<img width="600" alt="Screenshot 2022-08-24 at 17 18 26" src="https://user-images.githubusercontent.com/34375010/186442462-85c28c41-b595-483b-8b82-80eb3c325b86.png">
 
