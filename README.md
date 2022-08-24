@@ -9,4 +9,4 @@ We have achieved 3 environments to make our work easier.
 2. "token" - It was created to contain the authorization token 
 3. "bookingid" - It was created to contain the ID of the desired book 
 
-<img width="1276" alt="Screenshot 2022-08-24 at 16 43 05" src="https://user-images.githubusercontent.com/34375010/186434913-b5b58503-d493-40f1-922e-125f70005b94.png">
+<img width="800" alt="Screenshot 2022-08-24 at 16 43 05" src="https://user-images.githubusercontent.com/34375010/186434913-b5b58503-d493-40f1-922e-125f70005b94.png">
