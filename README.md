@@ -194,6 +194,8 @@ This snippet was created to check status 200 if the answer received contains "Ba
 
 :triangular_flag_on_post: Snippets 
 
+<details><summary> Click to expand code </summary>
+
  ```
  pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
@@ -255,6 +257,8 @@ var jsonData = JSON.parse(responseBody);
 pm.globals.set("bookingid", jsonData.bookingid)
 
  ```
+</details>
+
 
 This snippet was created to check the status of 200 if the answer received contains the following: Bookingid, firstname, Cristian, lastname, Cristian, totalprice, 150, depositpaid, false, bookingdates, checkin, checkout, addtionalneeds. 
 
