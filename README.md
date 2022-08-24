@@ -295,6 +295,7 @@ pm.test("Body contain bookingid", function () {
 });
 
 ```
+This snippet was designed to check the status of 200 and to have "bookingid" in the body.
 
 <img width="600" alt="Screenshot 2022-08-24 at 19 05 10" src="https://user-images.githubusercontent.com/34375010/186467759-5a633f69-61a8-445f-ae33-707b6950af2a.png">
 
