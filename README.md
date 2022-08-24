@@ -119,7 +119,7 @@ pm.test("Response body contain Bad credentials", function () {
 ```
 This snippet was created to check status 200 if the answer received contains "Bad credentials".
 
-<img width="1160" alt="Screenshot 2022-08-24 at 17 26 26" src="https://user-images.githubusercontent.com/34375010/186444217-1f811dcd-2144-4730-b5ac-e45c18da2316.png">
+<img width="600" alt="Screenshot 2022-08-24 at 17 26 26" src="https://user-images.githubusercontent.com/34375010/186444217-1f811dcd-2144-4730-b5ac-e45c18da2316.png">
 
 7. Auth with blank username
 
@@ -136,7 +136,7 @@ pm.test("Response body contain Bad credentials", function () {
 ```
 This snippet was created to check status 200 if the answer received contains "Bad credentials".
 
-<img width="1276" alt="Screenshot 2022-08-24 at 17 27 49" src="https://user-images.githubusercontent.com/34375010/186444554-4cc47352-88c9-41bd-ba8e-72b6472d117a.png">
+<img width="600" alt="Screenshot 2022-08-24 at 17 27 49" src="https://user-images.githubusercontent.com/34375010/186444554-4cc47352-88c9-41bd-ba8e-72b6472d117a.png">
 
 8. Auth with wrong Username&Password
 
@@ -153,7 +153,7 @@ pm.test("Response body contain Bad credentials", function () {
 ```
 This snippet was created to check status 200 if the answer received contains "Bad credentials".
 
-<img width="1278" alt="Screenshot 2022-08-24 at 17 29 08" src="https://user-images.githubusercontent.com/34375010/186444955-b9f3bcc7-1fd4-484f-8740-d4b2e57140ef.png">
+<img width="600" alt="Screenshot 2022-08-24 at 17 29 08" src="https://user-images.githubusercontent.com/34375010/186444955-b9f3bcc7-1fd4-484f-8740-d4b2e57140ef.png">
 
 
 
