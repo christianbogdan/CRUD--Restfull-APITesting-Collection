@@ -270,7 +270,7 @@ This snippet was created to check the status of 200 if the answer received conta
 :triangular_flag_on_post: Snippets
 
 ```
-pm.test("Status code is 200", function () {
+pm.test("Status code is 500", function () {
     pm.response.to.have.status(500);
 });
 pm.test("Body contain Internal Server Error", function () {
@@ -278,10 +278,25 @@ pm.test("Body contain Internal Server Error", function () {
 });
 
 ```
-This snippet was created to check the status of 200 if the answer received contains "Internal Server Error". 
+This snippet was created to check the status of 500 if the answer received contains "Internal Server Error". 
 
 <img width="600" alt="Screenshot 2022-08-24 at 19 02 10" src="https://user-images.githubusercontent.com/34375010/186466888-b84168c0-9539-4eb3-a57a-451d1706dedf.png">
 
+13. View all booking 
+ 
+:triangular_flag_on_post: Snippets 
+
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Body contain bookingid", function () {
+    pm.expect(pm.response.text()).to.include("bookingid");
+});
+
+```
+
+<img width="600" alt="Screenshot 2022-08-24 at 19 05 10" src="https://user-images.githubusercontent.com/34375010/186467759-5a633f69-61a8-445f-ae33-707b6950af2a.png">
 
 
 
