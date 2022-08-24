@@ -156,6 +156,40 @@ This snippet was created to check status 200 if the answer received contains "Ba
 <img width="600" alt="Screenshot 2022-08-24 at 17 29 08" src="https://user-images.githubusercontent.com/34375010/186444955-b9f3bcc7-1fd4-484f-8740-d4b2e57140ef.png">
 
 
+9. Auth with wrong Username
+
+:triangular_flag_on_post: Snippets 
+
+``` 
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Response body contain Bad credentials", function () {
+    pm.expect(pm.response.text()).to.include("Bad credentials");
+});
+
+```
+This snippet was created to check status 200 if the answer received contains "Bad credentials".
+
+<img width="600" alt="Screenshot 2022-08-24 at 17 32 49" src="https://user-images.githubusercontent.com/34375010/186445759-57b1478f-a190-4a3b-8491-b326661d20e7.png">
+
+10. Auth with wrong Password
+
+:triangular_flag_on_post: Snippets 
+
+``` 
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Response body contain Bad credentials", function () {
+    pm.expect(pm.response.text()).to.include("Bad credentials");
+});
+
+```
+This snippet was created to check status 200 if the answer received contains "Bad credentials". 
+
+<img width="600" alt="Screenshot 2022-08-24 at 17 33 51" src="https://user-images.githubusercontent.com/34375010/186446072-58d9ac26-e422-4baf-88f8-63b1c1b3d92f.png">
+
 
 
 
