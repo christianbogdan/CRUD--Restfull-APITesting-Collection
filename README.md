@@ -265,5 +265,23 @@ This snippet was created to check the status of 200 if the answer received conta
 <img width="600" alt="Screenshot 2022-08-24 at 17 43 26" src="https://user-images.githubusercontent.com/34375010/186448381-5e604404-98a8-409f-a7f8-0c0036706ab7.png"> 
    
 
+12. View booking without First Name 
+
+:triangular_flag_on_post: Snippets
+
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(500);
+});
+pm.test("Body contain Internal Server Error", function () {
+    pm.expect(pm.response.text()).to.include("Internal Server Error");
+});
+
+```
+This snippet was created to check the status of 200 if the answer received contains "Internal Server Error". 
+
+<img width="600" alt="Screenshot 2022-08-24 at 19 02 10" src="https://user-images.githubusercontent.com/34375010/186466888-b84168c0-9539-4eb3-a57a-451d1706dedf.png">
+
+
 
 
