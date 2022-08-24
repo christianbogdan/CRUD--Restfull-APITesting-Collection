@@ -1,0 +1,1303 @@
+{
+	"info": {
+		"_postman_id": "f4ee06a1-e24b-438c-916f-e937aaf43b0d",
+		"name": "Restfull APITesting Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21956069"
+	},
+	"item": [
+		{
+			"name": "Ping Server",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Created\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Created\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{env}}/ping",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"ping"
+					]
+				},
+				"description": "ping"
+			},
+			"response": []
+		},
+		{
+			"name": "AUTH",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response body contain token\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"token\");\r",
+							"});\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);\r",
+							"pm.globals.set(\"token\", jsonData.token )"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/auth",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "use for Autentification"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth without Username&Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response body contain Bad credentials\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/auth",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "use for Autentification"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth without Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response body contain Bad credentials\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/auth",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "use for Autentification"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth without Username",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response body contain Bad credentials\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\" : \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/auth",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "use for Autentification"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth with blank password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response body contain Bad credentials\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/auth",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "use for Autentification"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth with blank username",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response body contain Bad credentials\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"\",\r\n    \"password\" : \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/auth",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "use for Autentification"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth with wrong Username&Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response body contain Bad credentials\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"dasdasdas\",\r\n    \"password\" : \"ddsd121221\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/auth",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "use for Autentification"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth with wrong password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response body contain Bad credentials\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password123_wrong\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/auth",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "use for Autentification"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth with wrong Username",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response body contain Bad credentials\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"adminWrong\",\r\n    \"password\" : \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/auth",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "use for Autentification"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new booking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Body contain bookingid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"bookingid\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain firstname\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"firstname\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain Andreea1\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Andreea1\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain lastname\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"lastname\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain Andreea2\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Andreea2\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain totalprice\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"totalprice\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain 150\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"150\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain depositpaid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"depositpaid\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain false\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"false\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain bookingdates\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"bookingdates\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain checkin\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"checkin\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain checkout\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"checkout\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contain additionalneeds\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"additionalneeds\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.globals.set(\"bookingid\", jsonData.bookingid)\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"Cristian\",\r\n    \"lastname\" : \"Bogdan\",\r\n    \"totalprice\" : 150,\r\n    \"depositpaid\" : false,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2022-08-10\",\r\n        \"checkout\" : \"2022-09-01\"\r\n    },\r\n    \"additionalneeds\" : \"no special needs\"\r\n}"
+				},
+				"url": {
+					"raw": "{{env}}/booking",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking"
+					]
+				},
+				"description": "Create bookingId"
+			},
+			"response": []
+		},
+		{
+			"name": "View booking without First Name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});\r",
+							"pm.test(\"Body contain Internal Server Error\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Internal Server Error\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastname\" : \"Andreea2\",\r\n    \"totalprice\" : 150,\r\n    \"depositpaid\" : false,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2022-08-10\",\r\n        \"checkout\" : \"2022-09-01\"\r\n    },\r\n    \"additionalneeds\" : \"no special needs\"\r\n}"
+				},
+				"url": {
+					"raw": "{{env}}/booking",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking"
+					]
+				},
+				"description": "Create bookingId"
+			},
+			"response": []
+		},
+		{
+			"name": "View all booking",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body contain bookingid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"bookingid\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{env}}/booking/",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						""
+					],
+					"query": [
+						{
+							"key": "firstname",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "lastname",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "checkin",
+							"value": "2014-03-13",
+							"disabled": true
+						},
+						{
+							"key": "checkout",
+							"value": "2014-05-21",
+							"disabled": true
+						}
+					]
+				},
+				"description": "GET All Booking Ids"
+			},
+			"response": []
+		},
+		{
+			"name": "View all booking with Michael First Name",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body contain booking \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"bookingid\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{env}}/booking?firstname=Michael",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking"
+					],
+					"query": [
+						{
+							"key": "firstname",
+							"value": "Michael"
+						},
+						{
+							"key": "lastname",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "checkin",
+							"value": "2014-03-13",
+							"disabled": true
+						},
+						{
+							"key": "checkout",
+							"value": "2014-05-21",
+							"disabled": true
+						}
+					]
+				},
+				"description": "GET All Booking Ids"
+			},
+			"response": []
+		},
+		{
+			"name": "View all booking with wrong First Name",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body contains an empty list []\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"[]\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{env}}/booking?firstname=AAAA",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking"
+					],
+					"query": [
+						{
+							"key": "firstname",
+							"value": "AAAA"
+						},
+						{
+							"key": "lastname",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "checkin",
+							"value": "2014-03-13",
+							"disabled": true
+						},
+						{
+							"key": "checkout",
+							"value": "2014-05-21",
+							"disabled": true
+						}
+					]
+				},
+				"description": "GET All Booking Ids"
+			},
+			"response": []
+		},
+		{
+			"name": "GET booking after ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Body contains firstname\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"firstname\");\r",
+							"});\r",
+							"pm.test(\"Body contains lastname\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"lastname\");\r",
+							"});\r",
+							"pm.test(\"Body contains totalprice\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"totalprice\");\r",
+							"});\r",
+							"pm.test(\"Body contains depositpaid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"depositpaid\");\r",
+							"});\r",
+							"pm.test(\"Body contains bookingdates\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"bookingdates\");\r",
+							"});\r",
+							"pm.test(\"Body contains checkin\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"checkin\");\r",
+							"});\r",
+							"pm.test(\"Body contains checkout\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"checkout\");\r",
+							"});\r",
+							"pm.test(\"Body contains additionalneeds\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"additionalneeds\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{env}}/booking/{{bookingid}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"{{bookingid}}"
+					]
+				},
+				"description": "get a specifc book by id"
+			},
+			"response": []
+		},
+		{
+			"name": "GET booking after ID with wrong ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Body contains Not Found\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Not Found\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{env}}/booking/00000",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"00000"
+					]
+				},
+				"description": "get a specifc book by id"
+			},
+			"response": []
+		},
+		{
+			"name": "Update booking after ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body contains firstname\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"firstname\");\r",
+							"});\r",
+							"pm.test(\"Cristian\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Cristian\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Cookie",
+						"value": "token={{token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"Cristian\",\r\n    \"lastname\" : \"Bogdan\",\r\n     \"totalprice\" : 150,\r\n    \"depositpaid\" : false,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2022-08-10\",\r\n        \"checkout\" : \"2022-09-01\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{env}}/booking/{{bookingid}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"{{bookingid}}"
+					]
+				},
+				"description": "update"
+			},
+			"response": []
+		},
+		{
+			"name": "Update booking ID without First Name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Bad Request\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad Request\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Cookie",
+						"value": "token= 784feeb1be971e4",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastname\" : \"Cristian\",\r\n     \"totalprice\" : 150,\r\n    \"depositpaid\" : false,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2022-08-10\",\r\n        \"checkout\" : \"2022-09-01\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{env}}/booking/{{bookingid}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"{{bookingid}}"
+					]
+				},
+				"description": "update"
+			},
+			"response": []
+		},
+		{
+			"name": "Update booking ID without no Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"pm.test(\"Body contain Forbidden\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Forbidden\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Cookie",
+						"value": "token= 784feeb1be971e4",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"Andreea5\",\r\n    \"lastname\" : \"Andreea6\",\r\n     \"totalprice\" : 150,\r\n    \"depositpaid\" : false,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2022-08-10\",\r\n        \"checkout\" : \"2022-09-01\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{env}}/booking/{{bookingid}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"{{bookingid}}"
+					]
+				},
+				"description": "update"
+			},
+			"response": []
+		},
+		{
+			"name": "Partial Update Booking after ID",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Cookie",
+						"value": "token= \"c03863b91be5c92\"",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastname\" : \"Bogdan\",\r\n    \"totalprice\" : 150\r\n}"
+				},
+				"url": {
+					"raw": "{{env}}/booking/{{bookingid}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"{{bookingid}}"
+					]
+				},
+				"description": "partial update"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE booking after ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Body contain \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Created\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=\"7727d259a9f1f6a\"",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{env}}/booking/{{bookingid}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"{{bookingid}}"
+					]
+				},
+				"description": "delete"
+			},
+			"response": []
+		},
+		{
+			"name": "GET booking after delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Not Found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{env}}/booking/{{bookingid}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"{{bookingid}}"
+					]
+				},
+				"description": "get a specifc book by id"
+			},
+			"response": []
+		}
+	]
+}
