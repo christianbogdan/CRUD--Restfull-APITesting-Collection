@@ -193,9 +193,9 @@ This snippet was created to check status 200 if the answer received contains "Ba
 11. Create new booking 
 
 :triangular_flag_on_post: Snippets 
- 
-``` 
-    pm.test("Status code is 200", function () {
+
+ ```
+ pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
 
@@ -252,12 +252,14 @@ pm.test("Body contain additionalneeds", function () {
 });
 
 var jsonData = JSON.parse(responseBody);
-pm.globals.set("bookingid", jsonData.bookingid) ```
- 
-   
+pm.globals.set("bookingid", jsonData.bookingid)
+
+ ```
+
 This snippet was created to check the status of 200 if the answer received contains the following: Bookingid, firstname, Cristian, lastname, Cristian, totalprice, 150, depositpaid, fake, bookingdates, checkkin, checkout, addtionalneeds. 
 
-<img width="600" alt="Screenshot 2022-08-24 at 17 43 26" src="https://user-images.githubusercontent.com/34375010/186448381-5e604404-98a8-409f-a7f8-0c0036706ab7.png">
+<img width="600" alt="Screenshot 2022-08-24 at 17 43 26" src="https://user-images.githubusercontent.com/34375010/186448381-5e604404-98a8-409f-a7f8-0c0036706ab7.png"> 
+   
 
 
 
