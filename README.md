@@ -9,3 +9,4 @@ We have achieved 3 environments to make our work easier.
 2. "token" - It was created to contain the authorization token 
 3. "bookingid" - It was created to contain the ID of the desired book 
 
+![My Remote Image](https://i.postimg.cc/Fzk3zWCn/Screenshot-2022-08-24-at-16-43-05.png)
