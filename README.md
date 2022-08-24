@@ -171,7 +171,7 @@ pm.test("Response body contain Bad credentials", function () {
 ```
 This snippet was created to check status 200 if the answer received contains "Bad credentials".
 
-<img width="600" alt="Screenshot 2022-08-24 at 17 32 49" src="https://user-images.githubusercontent.com/34375010/186445759-57b1478f-a190-4a3b-8491-b326661d20e7.png">
+<img width="600" alt="Screenshot 2022-08-24 at 17 36 27" src="https://user-images.githubusercontent.com/34375010/186446677-71bda02d-d84a-48f9-9b2d-1c48e4380b6c.png">
 
 10. Auth with wrong Password
 
@@ -189,6 +189,7 @@ pm.test("Response body contain Bad credentials", function () {
 This snippet was created to check status 200 if the answer received contains "Bad credentials". 
 
 <img width="600" alt="Screenshot 2022-08-24 at 17 33 51" src="https://user-images.githubusercontent.com/34375010/186446072-58d9ac26-e422-4baf-88f8-63b1c1b3d92f.png">
+
 
 
 
