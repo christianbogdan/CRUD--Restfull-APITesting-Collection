@@ -18,7 +18,7 @@ We used different snippets to automate the testing process.
 
 1. GET Ping Server
 
-:triangular_flag_on_post: Environments 
+:triangular_flag_on_post: Snippets 
 
 ``` 
 pm.test("Created", function () {
@@ -26,6 +26,28 @@ pm.test("Created", function () {
 }); 
 
 ``` 
-This environment was created to test whether it comes as a "created" response.
+This snippet was created to test whether it comes as a "created" response.
 
 <img width="600" alt="Screenshot 2022-08-24 at 17 04 34" src="https://user-images.githubusercontent.com/34375010/186439217-f36dd0c6-1158-4394-908d-fade55428411.png">
+
+2. POST Auth 
+
+:triangular_flag_on_post: Snippets  
+
+``` 
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Response body contain token", function () {
+    pm.expect(pm.response.text()).to.include("token");
+});
+var jsonData = JSON.parse(responseBody);
+postman.setEnvironmentVariable("token", jsonData.token);
+pm.globals.set("token", jsonData.token )
+``` 
+This snippet was created to check status 200 if the answer received contains the word token.
+
+<img width="600" alt="Screenshot 2022-08-24 at 17 12 53" src="https://user-images.githubusercontent.com/34375010/186441244-db9fa236-b06b-44ba-a378-24266d877cf3.png">
+
+
+
