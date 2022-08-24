@@ -190,7 +190,76 @@ This snippet was created to check status 200 if the answer received contains "Ba
 
 <img width="600" alt="Screenshot 2022-08-24 at 17 33 51" src="https://user-images.githubusercontent.com/34375010/186446072-58d9ac26-e422-4baf-88f8-63b1c1b3d92f.png">
 
+11. Create new booking 
 
+:triangular_flag_on_post: Snippets 
+<details><summary>Click to expand code</summary>
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Body contain bookingid", function () {
+    pm.expect(pm.response.text()).to.include("bookingid");
+});
+
+pm.test("Body contain firstname", function () {
+    pm.expect(pm.response.text()).to.include("firstname");
+});
+
+pm.test("Body contain Cristian", function () {
+    pm.expect(pm.response.text()).to.include("Cristian");
+});
+
+pm.test("Body contain lastname", function () {
+    pm.expect(pm.response.text()).to.include("lastname");
+});
+
+pm.test("Body contain Cristian", function () {
+    pm.expect(pm.response.text()).to.include("Cristian");
+});
+
+pm.test("Body contain totalprice", function () {
+    pm.expect(pm.response.text()).to.include("totalprice");
+});
+
+pm.test("Body contain 150", function () {
+    pm.expect(pm.response.text()).to.include("150");
+});
+
+pm.test("Body contain depositpaid", function () {
+    pm.expect(pm.response.text()).to.include("depositpaid");
+});
+
+pm.test("Body contain false", function () {
+    pm.expect(pm.response.text()).to.include("false");
+});
+
+pm.test("Body contain bookingdates", function () {
+    pm.expect(pm.response.text()).to.include("bookingdates");
+});
+
+pm.test("Body contain checkin", function () {
+    pm.expect(pm.response.text()).to.include("checkin");
+});
+
+pm.test("Body contain checkout", function () {
+    pm.expect(pm.response.text()).to.include("checkout");
+});
+
+pm.test("Body contain additionalneeds", function () {
+    pm.expect(pm.response.text()).to.include("additionalneeds");
+});
+
+var jsonData = JSON.parse(responseBody);
+pm.globals.set("bookingid", jsonData.bookingid)
+
+```
+    </details>
+    
+This snippet was created to check the status of 200 if the answer received contains the following: Bookingid, firstname, Cristian, lastname, Cristian, totalprice, 150, depositpaid, fake, bookingdates, checkkin, checkout, addtionalneeds. 
+
+<img width="600" alt="Screenshot 2022-08-24 at 17 43 26" src="https://user-images.githubusercontent.com/34375010/186448381-5e604404-98a8-409f-a7f8-0c0036706ab7.png">
 
 
 
