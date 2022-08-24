@@ -68,3 +68,24 @@ This snippet was created to check status 200 if the answer received contains "Ba
 
 <img width="600" alt="Screenshot 2022-08-24 at 17 18 26" src="https://user-images.githubusercontent.com/34375010/186442462-85c28c41-b595-483b-8b82-80eb3c325b86.png">
 
+4. Auth without Username&Password 
+
+:triangular_flag_on_post: Snippets 
+
+``` 
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Response body contain Bad credentials", function () {
+    pm.expect(pm.response.text()).to.include("Bad credentials");
+});
+
+```
+This snippet was created to check status 200 if the answer received contains "Bad credentials".
+
+<img width="1272" alt="Screenshot 2022-08-24 at 17 22 21" src="https://user-images.githubusercontent.com/34375010/186443318-0df51198-fc8c-4f73-a197-98eca3e8c655.png">
+<img width="1162" alt="Screenshot 2022-08-24 at 17 23 04" src="https://user-images.githubusercontent.com/34375010/186443502-417cdb38-cec6-4bf7-87a4-f0298faaa747.png">
+
+
+
+
