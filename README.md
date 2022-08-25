@@ -334,5 +334,50 @@ This snippet was created to check the status is 200 and to have "[]" in the body
 
 <img width="600" alt="Screenshot 2022-08-25 at 12 26 02" src="https://user-images.githubusercontent.com/34375010/186630773-e0d9eec2-f680-4e60-937d-04cdf8ae3610.png">
 
+16.GET Booking after ID
 
+:triangular_flag_on_post: Snippets
+
+<details><summary> Click to expand code </summary>
+
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+
+pm.test("Body contains firstname", function () {
+    pm.expect(pm.response.text()).to.include("firstname");
+});
+pm.test("Body contains lastname", function () {
+    pm.expect(pm.response.text()).to.include("lastname");
+});
+pm.test("Body contains totalprice", function () {
+    pm.expect(pm.response.text()).to.include("totalprice");
+});
+pm.test("Body contains depositpaid", function () {
+    pm.expect(pm.response.text()).to.include("depositpaid");
+});
+pm.test("Body contains bookingdates", function () {
+    pm.expect(pm.response.text()).to.include("bookingdates");
+});
+pm.test("Body contains checkin", function () {
+    pm.expect(pm.response.text()).to.include("checkin");
+});
+pm.test("Body contains checkout", function () {
+    pm.expect(pm.response.text()).to.include("checkout");
+});
+pm.test("Body contains additionalneeds", function () {
+    pm.expect(pm.response.text()).to.include("additionalneeds");
+});
+
+
+pm.test("Response time is less than 600ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(600);
+});
+
+```
+</details>
+
+<img width="600" alt="Screenshot 2022-08-25 at 12 39 02" src="https://user-images.githubusercontent.com/34375010/186631430-32ff0b1b-b43f-4a48-94cd-580eb16e5b9d.png">
 
