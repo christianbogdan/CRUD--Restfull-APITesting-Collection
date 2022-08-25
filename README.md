@@ -299,5 +299,23 @@ This snippet was designed to check the status of 200 and to have "bookingid" in 
 
 <img width="600" alt="Screenshot 2022-08-24 at 19 05 10" src="https://user-images.githubusercontent.com/34375010/186467759-5a633f69-61a8-445f-ae33-707b6950af2a.png">
 
+14.View all booking with Michael First Name 
+
+:triangular_flag_on_post: Snippets 
+
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Body contain bookingid", function () {
+    pm.expect(pm.response.text()).to.include("bookingid");
+});
+
+```
+This snippet was designed to check the status of 200 and to have "bookingid" in the body.
+
+<img width="600alt="Screenshot 2022-08-25 at 12 21 19" src="https://user-images.githubusercontent.com/34375010/186627383-078c65c3-e937-4a45-acfb-9957b0f77db1.png">
+
+
 
 
