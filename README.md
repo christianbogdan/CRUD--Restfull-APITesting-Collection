@@ -399,7 +399,22 @@ This snippet was created to check the status is 400 and to have "Bad request" in
 
 <img width="600" alt="Screenshot 2022-08-25 at 13 10 42" src="https://user-images.githubusercontent.com/34375010/186638109-b4de81dc-8735-4ab6-929d-5aea473b500e.png">
 
+17.Update booking without no Auth 
 
+:triangular_flag_on_post: Snippets
+
+```
+pm.test("Status code is 403", function () {
+    pm.response.to.have.status(403);
+});
+pm.test("Body contain Forbidden", function () {
+    pm.expect(pm.response.text()).to.include("Forbidden");
+});
+```
+
+This snippet was created to check the status is 403 and to have "Forbidden" in the body.
+
+<img width="600" alt="Screenshot 2022-08-25 at 13 13 00" src="https://user-images.githubusercontent.com/34375010/186638583-c3b837cb-4f9c-4c71-8f96-0f2a38d59b2b.png">
 
 
 
