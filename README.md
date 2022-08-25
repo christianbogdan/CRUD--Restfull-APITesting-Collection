@@ -383,3 +383,23 @@ This snippet was created to check the status of 200 if the answer received conta
 
 <img width="600" alt="Screenshot 2022-08-25 at 12 39 02" src="https://user-images.githubusercontent.com/34375010/186631430-32ff0b1b-b43f-4a48-94cd-580eb16e5b9d.png">
 
+16.Update booking without First name 
+
+:triangular_flag_on_post: Snippets
+
+```
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+pm.test("Bad Request", function () {
+    pm.expect(pm.response.text()).to.include("Bad Request");
+});
+```
+This snippet was created to check the status is 400 and to have "Bad request" in the body.
+
+<img width="600" alt="Screenshot 2022-08-25 at 13 10 42" src="https://user-images.githubusercontent.com/34375010/186638109-b4de81dc-8735-4ab6-929d-5aea473b500e.png">
+
+
+
+
+
