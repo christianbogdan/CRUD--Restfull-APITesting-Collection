@@ -314,8 +314,25 @@ pm.test("Body contain bookingid", function () {
 ```
 This snippet was designed to check the status of 200 and to have "bookingid" in the body.
 
-<img width="600"alt="Screenshot 2022-08-25 at 12 21 19" src="https://user-images.githubusercontent.com/34375010/186627383-078c65c3-e937-4a45-acfb-9957b0f77db1.png">
+<img width="600" alt="Screenshot 2022-08-25 at 12 21 19" src="https://user-images.githubusercontent.com/34375010/186627383-078c65c3-e937-4a45-acfb-9957b0f77db1.png">
 
+
+15.View all booking with wrong First Name
+
+:triangular_flag_on_post: Snippets 
+
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Body contains an empty list []", function () {
+    pm.expect(pm.response.text()).to.include("[]");
+});
+```
+
+This snippet was created to check the status is 200 and to have "[]" in the body. 
+
+<img width="600" alt="Screenshot 2022-08-25 at 12 26 02" src="https://user-images.githubusercontent.com/34375010/186630773-e0d9eec2-f680-4e60-937d-04cdf8ae3610.png">
 
 
 
