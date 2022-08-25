@@ -416,5 +416,55 @@ This snippet was created to check the status is 403 and to have "Forbidden" in t
 
 <img width="600" alt="Screenshot 2022-08-25 at 13 13 00" src="https://user-images.githubusercontent.com/34375010/186638583-c3b837cb-4f9c-4c71-8f96-0f2a38d59b2b.png">
 
+18.Partial Update booking after ID
+
+:triangular_flag_on_post: Snippets
+
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(200);
+});
+```
+This snippet was created to check the status is 200 and server response is less 200ms.
+
+<img width="600" alt="Screenshot 2022-08-25 at 13 16 56" src="https://user-images.githubusercontent.com/34375010/186639394-aca89a9d-3dbb-4434-ae8f-6805852fc0f2.png">
+
+19.Delete booking after ID 
+
+:triangular_flag_on_post: Snippets
+
+```
+pm.test("Status code is 201", function () {
+    pm.response.to.have.status(201);
+});
+pm.test("Body contain ", function () {
+    pm.expect(pm.response.text()).to.include("Created");
+});
+```
+
+This snippet was created to check the status is 201 and to have "Created" in the body.
+
+<img width="600" alt="Screenshot 2022-08-25 at 13 19 31" src="https://user-images.githubusercontent.com/34375010/186639897-14d9986e-c8ff-4a01-b723-4c2ab0bc5ae1.png">
+
+20.GET booking after detele
+
+:triangular_flag_on_post: Snippets
+
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(404);
+});
+pm.test("Body matches string", function () {
+    pm.expect(pm.response.text()).to.include("Not Found");
+});
+```
+This snippet was created to check the status is 404 and to have "Not found" in the body.
+
+<img width="600" alt="Screenshot 2022-08-25 at 13 21 11" src="https://user-images.githubusercontent.com/34375010/186640236-2aab34c8-2c41-453c-abdc-a773fc1aeed1.png">
+
 
 
