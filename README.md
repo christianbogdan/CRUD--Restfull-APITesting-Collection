@@ -379,5 +379,7 @@ pm.test("Response time is less than 600ms", function () {
 ```
 </details>
 
+This snippet was created to check the status of 200 if the answer received contains the following: Bookingid, firstname, lastname, totalprice, depositpaid, bookingdates, checkin, checkout, addtionalneeds and the server response time is 600ms.
+
 <img width="600" alt="Screenshot 2022-08-25 at 12 39 02" src="https://user-images.githubusercontent.com/34375010/186631430-32ff0b1b-b43f-4a48-94cd-580eb16e5b9d.png">
 
